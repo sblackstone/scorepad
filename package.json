@@ -2,7 +2,7 @@
   "name": "scorepad",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "http://sblackstone.github.io/scorepad",
+  "homepage": "https://sblackstone.github.io/scorepad/",
   "dependencies": {
     "bootstrap": "^4.2.1",
     "jquery": "^3.3.1",
@@ -16,7 +16,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,6 +31,7 @@
   ],
   "devDependencies": {
     "flow-bin": "^0.89.0",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0"
   }
 }
