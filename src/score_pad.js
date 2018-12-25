@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './score_pad.scss';
-import { Container } from 'reactstrap';
 import PlayerScores from './player_scores';
 import ScoreForm from './score_form'
 
@@ -33,7 +32,7 @@ class ScorePad extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
     return(
-      <Container>
+      <div className='container'>
         <div className="d-flex flew-row">
           <div className="d-flex column p-3 flex-fill">
             <ScoreForm handleSubmit={this.handleSubmit} newRecord={this.newRecord} />
@@ -45,7 +44,7 @@ class ScorePad extends Component {
             <PlayerScores name="doug" scores={this.state.doug} />
           </div>
         </div>
-      </Container>
+      </div>
     )
   }  
 }
