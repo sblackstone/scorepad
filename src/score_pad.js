@@ -1,70 +1,53 @@
 import React, { Component } from 'react';
 import './score_pad.scss';
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 import PlayerScores from './player_scores';
-
-function ScorePadHeader() {
-  return (
-    <div className="ScorePadHeader">
-      <div className="align-items-center">      
-        Header 
-      </div>
-    </Row>          
-  )
-}
-
-function ScorePadNames() {
-  return (
-    <div className="d-flex flex-row ScorePadNames">
-      <div className="stephen">Stephen</div>
-      <div className="doug">Doug</div>
-    </div>
-  )
-}
-
-
-function ScorePadScores(props) {
-  return (
-        <div className='d-flex justify-content-between'>
-          <div className='column'>
-            <PlayerScores name="stephen" scores={props.scores.stephen} />
-          </div>
-          <div>
-            <PlayerScores name="doug" scores={props.scores.doug} />    
-          </div>
-        </div>
-  )
-}
-
+import ScoreForm from './score_form'
 
 class ScorePad extends Component {
   
   constructor(props) {
-    super(props);
+    super(props);    
     this.state = {
-      scores: {
-        doug: [
-          { raw: 13, special: "gin",     bonus: 25, total: 25+13 },
-          { raw: 16, special: "big_gin", bonus: 31, total: 31+16 },          
-        ],
-        stephen: [
-          { raw: 14, special: "gin",     bonus: 25, total: 25+14 },
-          { raw: 19, special: "big_gin", bonus: 31, total: 31+19 }, 
-        ]
-      }
+      doug: [],
+      stephen: []
     }
+    
+    
+  }
+  
+  handleSubmit(new_rec) {
+    const name = new_rec["name"];
+    const other_name = new_rec["name"] === "stephen" ? "doug" : "stephen";
+    
+    this.setState({
+        [name]:       [ ...this.state[name], new_rec  ],
+        [other_name]: [ ...this.state[other_name], { score: 0, outcome: "Loss", bonus: 0, total: 0 } ]
+    });
+    
+    console.log(new_rec);
   }
   
   render() {
+    
+    this.handleSubmit = this.handleSubmit.bind(this);
+
     return(
-      <Container fluid="true">
-        <ScorePadHeader />
-        <ScorePadNames />
-        <ScorePadScores scores={this.state.scores} />
+      <Container>
+        <div className="d-flex flew-row">
+          <div className="d-flex column p-3 flex-fill">
+            <ScoreForm handleSubmit={this.handleSubmit} newRecord={this.newRecord} />
+          </div>
+          <div className="d-flex column p-3 flex-fill">
+            <PlayerScores name="stephen" scores={this.state.stephen}/>
+          </div>
+          <div className="d-flex column p-3 flex-fill">
+            <PlayerScores name="doug" scores={this.state.doug} />
+          </div>
+        </div>
       </Container>
     )
-  }
-  
+  }  
 }
 
 
