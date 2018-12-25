@@ -13,7 +13,7 @@ function capitalize(str) {
 function ScoreOptions() {
   const opts = []
   for (let i = 1; i < 100; i++) {
-    opts.push(<option>{i}</option>)
+    opts.push(<option key={i}>{i}</option>)
   }
   return(opts);  
 }

@@ -12,6 +12,24 @@ function PlayerName(props) {
 }
 
 
+class Outcome extends Component {
+  constructor(props) {
+    super(props);    
+    this.values = { "gin": "Gin",
+                    "loss": "Loss",
+                    "knock": "Knocked",
+                    "big_gin": "Big Gin",
+                    "under_cut": "Under Cut",
+                    "": ""
+    };
+  }
+
+  render() {
+    return this.values[this.props.outcome];
+  }
+  
+}
+
 
 class ScoreRows extends Component {
   
@@ -24,7 +42,7 @@ class ScoreRows extends Component {
         <tr key={i}>
           <td className="text-center">{i+1}</td>
           <td className="text-center">{score.score}</td>
-          <td className="text-center">{capitalize(score.outcome)}</td>
+          <td className="text-center"><Outcome outcome={score.outcome} /></td>
           <td className="text-center">{score.bonus}</td>
           <td className="text-center">{score.total}</td>
           <td className="text-center">{this.total}</td>
