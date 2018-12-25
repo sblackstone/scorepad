@@ -2,6 +2,7 @@
   "name": "scorepad",
   "version": "0.1.0",
   "private": true,
+  "homepage" : "http://sblackstone.github.io/scorepad",
   "dependencies": {
     "bootstrap": "^4.2.1",
     "jquery": "^3.3.1",
