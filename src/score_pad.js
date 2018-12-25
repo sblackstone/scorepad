@@ -23,8 +23,6 @@ class ScorePad extends Component {
         [name]:       [ ...this.state[name], new_rec  ],
         [other_name]: [ ...this.state[other_name], { score: 0, outcome: "loss", bonus: 0, total: 0 } ]
     });
-    
-    console.log(new_rec);
   }
   
   render() {
