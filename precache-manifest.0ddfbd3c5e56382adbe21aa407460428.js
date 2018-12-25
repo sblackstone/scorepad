@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "49cd5ecd69fd9905f700",
+    "revision": "c1b444efcdc6258d273a",
     "url": "/scorepad/static/css/main.060599db.chunk.css"
   },
   {
-    "revision": "49cd5ecd69fd9905f700",
-    "url": "/scorepad/static/js/main.49cd5ecd.chunk.js"
+    "revision": "c1b444efcdc6258d273a",
+    "url": "/scorepad/static/js/main.c1b444ef.chunk.js"
   },
   {
     "revision": "7cb97ed2d58e3e59f43b",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/scorepad/static/js/runtime~main.fe8a71dd.js"
   },
   {
-    "revision": "50836b4d6c256a05304a72f2e86afbd2",
+    "revision": "6d5f812e3dfbb89b5e7d15aac1573cfd",
     "url": "/scorepad/index.html"
   }
 ];
